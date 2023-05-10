@@ -1508,10 +1508,19 @@ void tic_sys_default_mapping(tic_mapping* mapping)
         SDL_SCANCODE_DOWN,
         SDL_SCANCODE_LEFT,
         SDL_SCANCODE_RIGHT,
+        /*
+        https://github.com/nesbox/TIC-80/commit/80089c1097f4cae473f9ffd938979d99fd0f783d
+        https://github.com/cuu/TIC-80/commit/92574f5aa175b24d6e3f170873d3fc0f1d6afc33
+
         SDL_SCANCODE_Z,
         SDL_SCANCODE_X,
         SDL_SCANCODE_A,
         SDL_SCANCODE_S,
+        */
+        SDL_SCANCODE_J,
+        SDL_SCANCODE_K,
+        SDL_SCANCODE_U,
+        SDL_SCANCODE_I,
     };
 
     for(s32 s = 0; s < COUNT_OF(Scancodes); ++s)
