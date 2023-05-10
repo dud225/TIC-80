@@ -2188,7 +2188,11 @@ void studio_tick(Studio* studio, tic80_input input)
             ? tic_core_blit_ex(tic, callback[studio->mode])
             : tic_core_blit(tic);
 
+        /*
+        https://github.com/nesbox/TIC-80/discussions/2160#discussioncomment-5781927
+
         blitCursor(studio);
+        */
 
 #if defined(BUILD_EDITORS)
         if(isRecordFrame(studio))
