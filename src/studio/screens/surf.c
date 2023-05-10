@@ -720,7 +720,12 @@ static void tick(Surf* surf)
     {
         processGamepad(surf);
         if(tic_api_keyp(tic, tic_key_escape, -1, -1))
+            /*
+            https://github.com/cuu/TIC-80/commit/92574f5aa175b24d6e3f170873d3fc0f1d6afc33
+
             setStudioMode(surf->studio, TIC_CONSOLE_MODE);
+            */
+            exitStudio(surf->studio);
     }
 
     if (getStudioMode(surf->studio) != TIC_SURF_MODE) return;

@@ -1775,7 +1775,12 @@ static void processShortcuts(Studio* studio)
                     return;
                 }
             default:
+                /*
+                https://github.com/cuu/TIC-80/commit/92574f5aa175b24d6e3f170873d3fc0f1d6afc33
+
                 setStudioMode(studio, TIC_CONSOLE_MODE);
+                */
+                exitStudio(studio);
             }
         }
         else if(keyWasPressedOnce(studio, tic_key_f8)) takeScreenshot(studio);
