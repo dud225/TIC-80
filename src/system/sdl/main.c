@@ -602,8 +602,23 @@ static void calcTextureRect(SDL_Rect* rect)
 
     if (sw * Height < sh * Width)
     {
-        w = sw - (integerScale ? sw % Width : 0);
+      /*
+      https://github.com/nesbox/TIC-80/issues/1279
+      https://github.com/cuu/TIC-80/commit/92574f5aa175b24d6e3f170873d3fc0f1d6afc33
+
+      w = sw - (integerScale ? sw % Width : 0);
+      h = Height * w / Width;
+      */
+      if (sw % Width < sh % Height)
+      {
+        w = sw;
         h = Height * w / Width;
+      }
+      else
+      {
+        h = sh;
+        w = Width * h / Height;
+      }
     }
     else
     {
